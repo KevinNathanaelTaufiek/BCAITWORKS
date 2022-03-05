@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".DetailActivity">
+
+
+    <ImageView
+        android:id="@+id/iv_poster_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_title_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text=""
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_poster_detail"
+        app:layout_constraintTop_toTopOf="@+id/iv_poster_detail" />
+
+    <TextView
+        android:id="@+id/tv_rating_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:drawableStart="@drawable/ic_star"
+        android:drawablePadding="8dp"
+        android:drawableTint="@color/yellow"
+        android:gravity="center"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/iv_poster_detail"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_detail" />
+
+    <TextView
+        android:id="@+id/tv_eps_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Current Episode : "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_poster_detail"
+        app:layout_constraintTop_toBottomOf="@+id/tv_rating_detail" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_favourite"
+        app:layout_constraintTop_toBottomOf="@+id/iv_poster_detail"
+        android:layout_marginVertical="8dp">
+
+        <TextView
+            android:id="@+id/tv_desc_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description:\n" />
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <Button
+        android:id="@+id/btn_favourite"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/add_to_favourite"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
